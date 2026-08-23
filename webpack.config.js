@@ -12,7 +12,8 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/todo-list/',
+    // FIX 1: Cleared old '/todo-list/' path so development and relative assets load correctly
+    publicPath: './', 
     clean: true,
   },
   devtool: 'inline-source-map',
@@ -26,7 +27,10 @@ const config = {
       template: './src/index.html',
       filename: 'index.html',
     }),
-
+    // FIX 3: Placed plugin instantiation inside primary configuration block safely
+    new MiniCssExtractPlugin({ 
+      filename: 'style.css' 
+    }),
   ],
   module: {
     rules: [
@@ -38,7 +42,8 @@ const config = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name][ext]',
+          // FIX 2: Emits your final weather images cleanly into dist/assets/image folder
+          filename: 'assets/image/[name][ext]',
         },
       },
     ],
@@ -51,7 +56,4 @@ const config = {
   },
 };
 
-const wrappedConfig = smp.wrap(config);
-wrappedConfig.plugins.push(new MiniCssExtractPlugin({ filename: 'style.css' }));
-
-module.exports = wrappedConfig;
+module.exports = smp.wrap(config);
