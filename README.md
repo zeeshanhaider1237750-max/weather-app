@@ -45,7 +45,6 @@ weather-app/
 │   │       ├── snow.png
 │   │       └── wind.png
 │   ├── modules/
-│   │   ├── API.js
 │   │   ├── convert.js
 │   ├── index.html
 │   ├── script.js

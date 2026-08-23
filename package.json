@@ -1,9 +1,12 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Real-time weather data web application.",
+  "main": "./src/script.js",
+  "type": "module",
   "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,9 +14,8 @@
     "url": "git+https://github.com/zeeshanhaider1237750-max/weather-app.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "author": "Zeeshan Haider",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zeeshanhaider1237750-max/weather-app/issues"
   },
