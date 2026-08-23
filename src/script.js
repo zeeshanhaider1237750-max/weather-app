@@ -25,3 +25,4 @@ btn.addEventListener("click", async (event) => {
  
 });
 
+const currentTemperature = document.createElement("")
