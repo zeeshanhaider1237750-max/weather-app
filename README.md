@@ -47,7 +47,6 @@ weather-app/
 │   ├── modules/
 │   │   ├── API.js
 │   │   ├── convert.js
-│   │   └── storage.js
 │   ├── index.html
 │   ├── script.js
 │   └── style.css
