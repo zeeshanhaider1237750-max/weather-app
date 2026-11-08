@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    background-color: aqua;
+}
+.WD{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    background-color: beige;
+    padding: 20px 0;
+}
+.element{
+    display: grid;
+    grid-template-columns: 200px 120px;
+    gap: 20px;
+    align-items: center;
+}
+.element p{
+    text-align: left;
+    margin: 0;
+}
+.elementItem{
+    border: 2px solid black;
+    padding: 5% 1%;
+    min-width: 5vw;
+    text-align: left;
+    margin-left: 6px;
+}
