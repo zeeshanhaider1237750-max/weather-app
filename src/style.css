@@ -5,7 +5,6 @@ body{
     flex-direction: column;
     text-align: center;
     width: 100vw;
-    background-color: aqua;
 }
 .WD{
     display: flex;
@@ -14,14 +13,18 @@ body{
     justify-content: center;
     gap: 15px;
     width: 100%;
-    background-color: beige;
     padding: 20px 0;
+    background-size:100% 110%;
+    background-position: center top;
+    background-repeat: no-repeat;
+
 }
 .element{
     display: grid;
     grid-template-columns: 200px 120px;
     gap: 20px;
     align-items: center;
+    color: white;
 }
 .element p{
     text-align: left;

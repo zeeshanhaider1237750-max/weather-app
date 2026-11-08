@@ -1,5 +1,14 @@
 import { retrieveData } from "./modules/convert.js";
 import './style.css';
+import clearDay from "./assets/image/clear-day.png";
+import clearNight from "./assets/image/clear-night.png";
+import cloudy from "./assets/image/cloudy.png";
+import Fog from "./assets/image/fog.png";
+import partlyCloudyDay from "./assets/image/partly-cloudy-day.png";
+import partlyCloudyNight from "./assets/image/partly-cloudy-night.png";
+import Rain from "./assets/image/rain.png";
+import Snow from "./assets/image/snow.png";
+import Wind from "./assets/image/wind.png";
 
 const btn = document.getElementById("location-btn");
 const cityInput = document.getElementById("location");
@@ -62,7 +71,7 @@ btn.addEventListener("click", async (event) => {
 
     const cTValue = document.createElement("div");
     currentTemperature.appendChild(cTValue);
-    cTValue.textContent = dataFetched.currentConditions.temp + " °C";
+    cTValue.textContent = dataFetched.currentConditions.temp + " °F";
     cTValue.className = "elementItem";
 
     const apparentTemperature = document.createElement("div");
@@ -75,7 +84,7 @@ btn.addEventListener("click", async (event) => {
 
     const aTValue = document.createElement("div");
     apparentTemperature.appendChild(aTValue);
-    aTValue.textContent = dataFetched.currentConditions.feelslike + " °C";
+    aTValue.textContent = dataFetched.currentConditions.feelslike + " °F";
     aTValue.className = "elementItem";
 
     const sunRise = document.createElement("div");
@@ -247,6 +256,35 @@ btn.addEventListener("click", async (event) => {
     longitudeValue.textContent = dataFetched.longitude + "°";
     longitudeValue.className = "elementItem";
 
+    const photo = dataFetched.currentConditions.icon;
+
+    if(photo === "clear-day"){
+      weatherData.style.backgroundImage = `url(${clearDay})`;
+    }
+    else if(photo === "clear-night"){
+      weatherData.style.backgroundImage = `url(${clearNight})`;
+    }
+    else if(photo === "cloudy"){
+      weatherData.style.backgroundImage = `url(${cloudy})`;
+    }
+    else if(photo === "fog"){
+      weatherData.style.backgroundImage = `url(${Fog})`;
+    }
+    else if(photo === "partly-cloudy-day"){
+      weatherData.style.backgroundImage = `url(${partlyCloudyDay})`;
+    }
+    else if(photo === "partly-cloudy-night"){
+      weatherData.style.backgroundImage = `url(${partlyCloudyNight})`;
+    }
+    else if(photo === "rain"){
+      weatherData.style.backgroundImage = `url(${Rain})`;
+    }
+    else if(photo === "snow"){
+      weatherData.style.backgroundImage = `url(${Snow})`;
+    }
+    else if(photo === "wind"){
+      weatherData.style.backgroundImage = `url(${Wind})`;
+    }
  
     cityInput.value = "";
     return dataFetched;
